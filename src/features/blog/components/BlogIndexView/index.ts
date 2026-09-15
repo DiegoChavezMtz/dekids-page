@@ -1,0 +1,1 @@
+export { BlogIndexView } from "./BlogIndexView";

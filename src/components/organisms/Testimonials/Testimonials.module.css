@@ -1,0 +1,80 @@
+.section {
+  padding: var(--space-24) var(--space-6);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--content-max);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.kicker {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.card {
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.quote {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-fg);
+  margin: 0;
+}
+
+.quote::before {
+  content: "\201C";
+  color: var(--color-accent);
+}
+
+.quote::after {
+  content: "\201D";
+  color: var(--color-accent);
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.role {
+  color: var(--color-fg-subtle);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

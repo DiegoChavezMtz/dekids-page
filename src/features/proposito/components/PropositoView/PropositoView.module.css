@@ -1,0 +1,52 @@
+.statBlock {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  text-align: center;
+}
+
+.statNumber {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-accent);
+  margin: 0;
+  line-height: 1;
+}
+
+.statLabel {
+  color: var(--color-fg-muted);
+  font-size: 1.1rem;
+  margin: var(--space-2) 0 var(--space-2);
+}
+
+.statCallout {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.reasons {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.reasonCard {
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+}
