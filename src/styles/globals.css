@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+@import "./landing.css";
+
 /* Design tokens — Dekids */
 :root {
   color-scheme: dark;
+  --font-roboto: Roboto, Arial, sans-serif;
 
   /* Surface */
   --color-bg: #030304;
@@ -26,6 +30,7 @@
   --space-4: 1rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
   --space-24: 6rem;
@@ -44,7 +49,7 @@
   --duration-base: 500ms;
   --duration-slow: 900ms;
 
-  font: 100%/1.5 -apple-system, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  font: 100%/1.5 var(--font-roboto);
 }
 
 * {
@@ -58,6 +63,19 @@ html {
 html,
 body {
   height: 100%;
+}
+
+/* La portada usa el sistema editorial del nuevo prototipo. Estos overrides se
+   aplican únicamente cuando su vista está presente, sin afectar las rutas
+   existentes del sitio. */
+body:has(.landing) {
+  background: #fff;
+  color: #10120f;
+}
+
+body:has(.landing) > header,
+body:has(.landing) > footer {
+  display: none;
 }
 
 body {

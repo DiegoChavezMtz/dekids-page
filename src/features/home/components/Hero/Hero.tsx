@@ -14,14 +14,15 @@ export function Hero() {
 
       <Reveal delayMs={100}>
         <h1 className={styles.headline}>
-          Prepara mentes para un mundo que <em>aún no existe</em>
+          Aprende <em>más allá de lo tradicional</em>
         </h1>
       </Reveal>
 
       <Reveal delayMs={200}>
         <p className={styles.sub}>
-          Emprendimiento, tecnología e inteligencia artificial para que niñ@s
-          y adolescentes construyan confianza real — no solo conocimientos.
+          Prepara mentes para un mundo que aún no existe: emprendimiento,
+          tecnología e inteligencia artificial para que niñ@s y adolescentes
+          construyan confianza real.
         </p>
       </Reveal>
 

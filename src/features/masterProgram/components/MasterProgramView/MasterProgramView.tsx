@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/organisms/PageHero";
 import { Button } from "@/components/atoms/Button";
 import { Reveal } from "@/components/atoms/Reveal";
+import { Faq } from "@/components/organisms/Faq";
 import { Testimonials } from "@/components/organisms/Testimonials";
 import styles from "./MasterProgramView.module.css";
 
@@ -16,7 +17,29 @@ const BENEFITS = [
 const INCLUDES = [
   { number: "40", label: "horas de aprendizaje" },
   { number: "100%", label: "sesiones en tiempo real" },
-  { number: "1 a 1", label: "contenido grabado incluido" },
+  { number: "✓", label: "contenido grabado" },
+];
+
+const PILLARS = [
+  { title: "Ciudadanos globales activos" },
+  { title: "Aprendizaje a través de desafíos del mundo real" },
+  { title: "Desde cualquier parte del mundo", text: "Conéctate desde tu lugar favorito · Sesiones 1 a 1 en línea" } as { title: string; text?: string },
+];
+
+const FAQ_ITEMS = [
+  {
+    question: "¿Qué conocimientos previos requiere mi hij@?",
+    answer: "Se requiere saber leer, hacer operaciones matemáticas básicas y escribir.",
+  },
+  { question: "¿Los pagos incluyen IVA?", answer: "Así es, los precios ya incluyen el IVA del 16%." },
+  {
+    question: "¿Tienen descuentos por inscribir a más de 1 niño?",
+    answer: "Sí, 10% de descuento adicional por cada dekidser (válido hasta 3 participantes).",
+  },
+  {
+    question: "¿Puedo facturar?",
+    answer: "Así es. Una vez realizado tu pago, te indicaremos cómo puedes facturar.",
+  },
 ];
 
 export function MasterProgramView() {
@@ -34,6 +57,22 @@ export function MasterProgramView() {
           Conocer el programa
         </Button>
       </PageHero>
+
+      <section className={styles.section}>
+        <Reveal>
+          <h2 className={styles.sectionTitle}>Te damos la bienvenida a la Educación 4.0</h2>
+        </Reveal>
+        <div className={styles.grid}>
+          {PILLARS.map((pillar, i) => (
+            <Reveal key={pillar.title} delayMs={i * 120}>
+              <div className={styles.card}>
+                <p className={styles.cardTitle}>{pillar.title}</p>
+                {pillar.text && <p className={styles.cardText}>{pillar.text}</p>}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
       <section className={styles.section}>
         <Reveal>
@@ -69,6 +108,7 @@ export function MasterProgramView() {
       <section className={styles.section} id="pricing">
         <Reveal>
           <div className={styles.pricing}>
+            <h2 className={styles.priceHeading}>Entre más aprende hoy tu hij@, inviertes menos en el futuro</h2>
             <p className={styles.priceUnit}>Inversión total</p>
             <p className={styles.price}>
               10 pagos de $2,799<span className={styles.priceUnit}>/mes</span>
@@ -90,6 +130,7 @@ export function MasterProgramView() {
       </section>
 
       <Testimonials />
+      <Faq items={FAQ_ITEMS} />
     </main>
   );
 }

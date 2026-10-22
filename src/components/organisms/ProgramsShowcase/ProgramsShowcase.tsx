@@ -9,7 +9,7 @@ const PROGRAMS: (ProgramHighlight & { cardClass: string })[] = [
     eyebrow: "Para niñ@s y adolescentes",
     title: "Master in Future Design",
     description:
-      "La experiencia más emocionante para desarrollar confianza a través del emprendimiento y la tecnología, utilizando herramientas de inteligencia artificial.",
+      "La experiencia más emocionante para niñ@s y adolescentes donde desarrollan su confianza a través del emprendimiento y la tecnología utilizando herramientas de inteligencia artificial",
     bullets: [
       "40 horas de aprendizaje en vivo",
       "Sesiones 1 a 1, tú eliges el horario",
@@ -23,7 +23,7 @@ const PROGRAMS: (ProgramHighlight & { cardClass: string })[] = [
     eyebrow: "Para empresas",
     title: "Future Enterprise",
     description:
-      "Crea impacto positivo y relevante en las personas más importantes para tus colaboradores o clientes, y posiciónate como una empresa con visión futurista.",
+      "Crea impacto positivo y relevante en las personas más importantes para tus colaboradores o clientes a través de sorprendentes competencias y posiciónate como una empresa con responsabilidad social y visión futurista",
     bullets: [
       "Activaciones y competencias de marca",
       "Cobertura mediática y comunicación positiva",

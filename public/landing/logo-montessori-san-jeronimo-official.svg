@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 104" role="img" aria-labelledby="title desc">
+  <title id="title">Montessori San Jerónimo</title>
+  <desc id="desc">Identidad visual publicada en el sitio oficial de Montessori San Jerónimo.</desc>
+  <g transform="translate(2 1) scale(.19)">
+    <path fill="#af4317" d="M173.08 82.22c0 27.443-22.028 49.69-49.2 49.69s-49.2-22.247-49.2-49.69 22.028-49.69 49.2-49.69 49.2 22.247 49.2 49.69"/>
+    <path fill="#af4317" d="M344.75 82.22c0 27.443-22.028 49.69-49.2 49.69s-49.2-22.247-49.2-49.69 22.028-49.69 49.2-49.69 49.2 22.247 49.2 49.69"/>
+    <path fill="#cbb344" d="m71.82 147.11 274.45-.37-137.04 98.25z"/>
+    <path fill="#4a574e" d="m64.91 148.37.13 284.48 62.12-62.49 77.93 65.69V249.14z"/>
+    <path fill="#4a574e" d="m213.43 436.05.07-186.91 140.3-100.99v284.83l-62.12-65z"/>
+  </g>
+  <g fill="#4a574e" font-family="Avenir Next, Avenir, Montserrat, Arial, sans-serif" font-weight="700">
+    <text x="88" y="46" font-size="31">Montessori</text>
+    <text x="88" y="80" font-size="31">San Jerónimo</text>
+  </g>
+</svg>

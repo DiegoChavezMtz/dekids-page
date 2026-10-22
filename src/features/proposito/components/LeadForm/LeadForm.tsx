@@ -19,7 +19,7 @@ export function LeadForm() {
     <section className={styles.section} id="registro">
       <div className={styles.card}>
         <h2 className={styles.title}>Regístrate y obtén 50% en tu primer taller</h2>
-        <p className={styles.sub}>Empezar temprano, recompensa muy bien.</p>
+        <p className={styles.sub}>Empezar temprano, recompensa muy bien. Hoy es la oportunidad para iniciar.</p>
 
         <form
           onSubmit={(e) => {

@@ -3,9 +3,8 @@ import { BlogIndexView } from "@/features/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description:
-    "Artículos sobre crianza, tecnología y emprendimiento para acompañar a niñ@s y adolescentes en un mundo que cambia cada día.",
-  alternates: { canonical: "/blog" },
+  description: "Artículos relacionados a las habilidades del futuro para las niñas y niños",
+  alternates: { canonical: "/blog/" },
 };
 
 export default function BlogPage() {

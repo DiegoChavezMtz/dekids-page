@@ -4,7 +4,16 @@
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-3) var(--space-6);
+}
+
+/* El blur vive en un pseudo-elemento: backdrop-filter en el header crearía un
+   containing block y rompería el overlay `position: fixed` del menú móvil. */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(3, 3, 4, 0.6);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -12,6 +21,8 @@
 }
 
 .inner {
+  position: relative;
+  z-index: 2;
   width: 100%;
   max-width: var(--content-max);
   display: flex;
@@ -56,7 +67,8 @@
   gap: var(--space-4);
 }
 
-.actions :global(.button) {
+.actions .cta {
+  display: none;
   padding: 0.6rem 1.2rem;
   font-size: 0.9rem;
 }
@@ -64,5 +76,9 @@
 @media (min-width: 860px) {
   .nav {
     display: flex;
+  }
+
+  .actions .cta {
+    display: inline-flex;
   }
 }

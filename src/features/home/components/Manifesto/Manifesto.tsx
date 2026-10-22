@@ -12,11 +12,13 @@ export function Manifesto() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <Reveal>
-          <p className={styles.statement}>
-            El aprendizaje en la niñez es <span className={styles.accent}>invaluable</span>.
-            Ante una nueva era de cambios constantes, creamos experiencias{" "}
-            <span className={styles.accent}>no tradicionales</span> para toda
-            la vida.
+          <h2 className={styles.statement}>
+            Nos enfocamos en el aprendizaje{" "}
+            <span className={styles.accent}>para toda la vida</span>
+          </h2>
+          <p className={styles.lead}>
+            El aprendizaje en la niñez es invaluable, y ante una nueva era de
+            cambios constantes, creamos cursos y talleres NO tradicionales
           </p>
         </Reveal>
 

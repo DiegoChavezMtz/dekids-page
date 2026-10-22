@@ -1,0 +1,1 @@
+export { TeamTeaser } from "./TeamTeaser";

@@ -1,0 +1,107 @@
+.toggle {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-fg);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}
+
+.bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.open .bar:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.open .bar:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-24) var(--space-8) var(--space-12);
+  background: rgba(3, 3, 4, 0.98);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    visibility 0s linear var(--duration-base);
+}
+
+.overlayOpen {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.link {
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  padding: var(--space-2) 0;
+  color: var(--color-fg);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+  transition-delay: calc(var(--i) * 50ms);
+}
+
+.overlayOpen .link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+.cta {
+  margin-top: var(--space-12);
+  align-self: flex-start;
+}
+
+@media (min-width: 860px) {
+  .toggle,
+  .overlay {
+    display: none;
+  }
+}

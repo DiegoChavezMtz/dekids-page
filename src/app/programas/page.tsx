@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Programas",
   description:
     "Conoce los programas de Dekids: Master in Future Design para niñ@s y adolescentes, y Future Enterprise para empresas con visión de futuro.",
-  alternates: { canonical: "/programas" },
+  alternates: { canonical: "/programas/" },
 };
 
 export default function ProgramasPage() {

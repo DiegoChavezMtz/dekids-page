@@ -39,6 +39,9 @@ export function SiteFooter() {
               <Link href="/proposito">Propósito</Link>
             </li>
             <li>
+              <Link href="/nosotros">Nosotros</Link>
+            </li>
+            <li>
               <Link href="/blog">Blog</Link>
             </li>
             <li>
@@ -54,8 +57,44 @@ export function SiteFooter() {
         </div>
 
         <div>
+          <p className={styles.columnTitle}>Contacto</p>
+          <ul className={styles.linkList}>
+            <li>
+              <a href="tel:+525573731655">55 7373 1655</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/dekidsmx/" target="_blank" rel="noopener noreferrer">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/dekidsmx" target="_blank" rel="noopener noreferrer">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/DeKidsMx" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCGGG4ew0ZqUr6O8b8cwsNGQ/videos"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                YouTube
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
           <p className={styles.columnTitle}>Legal</p>
           <ul className={styles.linkList}>
+            <li>
+              <Link href="/politica-de-privacidad">Política de privacidad</Link>
+            </li>
             <li>
               <Link href="/politica-de-cookies">Política de cookies</Link>
             </li>

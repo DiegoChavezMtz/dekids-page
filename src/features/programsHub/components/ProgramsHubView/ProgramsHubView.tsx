@@ -5,7 +5,7 @@ export function ProgramsHubView() {
   return (
     <main>
       <PageHero
-        eyebrow="Educación 4.0"
+        eyebrow="Programas disponibles"
         title="Aprende más allá de lo tradicional"
         sub="Dos caminos para preparar mentes ante un futuro incierto: uno para niñ@s y adolescentes, otro para empresas con visión de futuro."
       />

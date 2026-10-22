@@ -9,7 +9,7 @@
   margin: 0 auto;
   display: grid;
   gap: var(--space-16);
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: 1.4fr repeat(4, 1fr);
 }
 
 .brand {
@@ -76,7 +76,7 @@
   font-size: 0.85rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .inner {
     grid-template-columns: 1fr 1fr;
   }

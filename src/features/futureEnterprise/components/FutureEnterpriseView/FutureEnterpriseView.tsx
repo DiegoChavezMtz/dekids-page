@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/organisms/PageHero";
 import { Button } from "@/components/atoms/Button";
+import { Faq } from "@/components/organisms/Faq";
 import { Reveal } from "@/components/atoms/Reveal";
 import styles from "./FutureEnterpriseView.module.css";
 
@@ -14,8 +15,29 @@ const BENEFITS = [
 
 const WAYS_TO_PARTICIPATE = [
   "Acerca estos programas a tus colaboradores",
-  "Beca a niñ@s a través de alguna dinámica de activación con tu producto o servicio",
+  "Beca a niñ@s a través de alguna dinámica de activación con tu producto/servicio",
   "Patrocina competencias de emprendimiento y/o tecnología",
+];
+
+const FAQ_ITEMS = [
+  {
+    question: "¿Ofrecen programas personalizados para lo que busca mi empresa?",
+    answer:
+      "En cada experiencia mantenemos nuestra esencia, sin embargo nos adaptamos a la temática, duración u objetivos de lo que buscas.",
+  },
+  {
+    question: "¿Los programas son completamente en línea, presenciales o tienen un formato híbrido?",
+    answer: "Puedes optar por el formato en línea o presencial.",
+  },
+  {
+    question: "¿Cuánto tiempo duran los programas?",
+    answer: "Tenemos experiencias con duración desde 90 minutos hasta 40 horas o más.",
+  },
+  {
+    question: "¿Tienen precio especial para fundaciones?",
+    answer:
+      "¡Así es! Buscamos amplificar el impacto por un bien común, por lo que cuando trabajamos con fundaciones manejamos planes especiales.",
+  },
 ];
 
 export function FutureEnterpriseView() {
@@ -68,8 +90,8 @@ export function FutureEnterpriseView() {
       <div className={styles.closing}>
         <Reveal>
           <h2 className={styles.closingTitle}>
-            Acerca una experiencia inolvidable a las personas más importantes
-            para tus colaboradores
+            ¡Acerca una experiencia inolvidable a tus colaboradores para las
+            personas más importantes de su vida!
           </h2>
         </Reveal>
         <Reveal delayMs={100}>
@@ -80,6 +102,8 @@ export function FutureEnterpriseView() {
           </div>
         </Reveal>
       </div>
+
+      <Faq items={FAQ_ITEMS} />
     </main>
   );
 }

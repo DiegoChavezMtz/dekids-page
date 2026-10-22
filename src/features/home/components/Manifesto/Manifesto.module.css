@@ -18,6 +18,14 @@
   margin: 0 0 var(--space-4);
 }
 
+.lead {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--color-fg-muted);
+  max-width: 44ch;
+  margin: 0 auto;
+}
+
 .statement .dim {
   color: var(--color-fg-subtle);
 }
