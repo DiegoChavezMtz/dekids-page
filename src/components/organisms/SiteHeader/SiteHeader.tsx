@@ -2,6 +2,6 @@ import { LandingNavigation } from "@/features/home/components/LandingNavigation/
 
 export function SiteHeader() {
   return (
-    <div className="site-nav-context"><div className="landing"><LandingNavigation internal /></div></div>
+    <header className="site-nav-context"><div className="landing"><LandingNavigation internal /></div></header>
   );
 }
