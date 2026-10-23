@@ -9,20 +9,21 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-accent);
+  font-family: "Space Mono", var(--font-roboto);
   margin: 0 0 var(--space-4);
   text-align: center;
 }
 
 .title {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  text-align: center;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+  text-align: left;
   margin: 0 0 var(--space-4);
 }
 
 .date {
-  text-align: center;
+  text-align: left;
   color: var(--color-fg-subtle);
   font-size: 0.9rem;
   margin: 0 0 var(--space-12);
@@ -101,7 +102,7 @@
   flex-direction: column;
   gap: var(--space-2);
   padding: var(--space-6);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   background: var(--color-bg-card);
   text-decoration: none;
@@ -118,6 +119,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-accent);
+  font-family: "Space Mono", var(--font-roboto);
 }
 
 .relatedName {
@@ -140,7 +142,7 @@
 .figure img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--color-border);
 }
 
@@ -151,7 +153,7 @@
 .quote {
   margin: 0 0 var(--space-6);
   padding: var(--space-2) 0 var(--space-2) var(--space-6);
-  border-left: 3px solid var(--color-accent);
+  border-left: 5px solid var(--color-accent);
   font-size: 1.15rem;
   line-height: 1.7;
   color: var(--color-fg);

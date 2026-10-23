@@ -11,6 +11,7 @@
 }
 
 .storyEyebrow {
+  font-family: "Space Mono", var(--font-roboto);
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -72,7 +73,7 @@
 .pairCard {
   height: 100%;
   padding: var(--space-12);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   background:
     radial-gradient(90% 120% at 0% 0%, rgba(198, 255, 77, 0.12), transparent 60%),
@@ -80,6 +81,7 @@
 }
 
 .pairLabel {
+  font-family: "Space Mono", var(--font-roboto);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -116,7 +118,7 @@
 
 .value {
   padding: var(--space-6) var(--space-8);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   background: var(--color-bg-card);
   font-weight: 600;

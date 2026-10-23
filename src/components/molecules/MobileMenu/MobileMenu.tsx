@@ -14,6 +14,7 @@ type MobileMenuProps = {
 
 export function MobileMenu({ links, ctaHref, ctaLabel }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const menuLinks = [{ href: "/", label: "Inicio" }, ...links];
 
   useEffect(() => {
     if (!open) return;
@@ -52,7 +53,7 @@ export function MobileMenu({ links, ctaHref, ctaLabel }: MobileMenuProps) {
         aria-hidden={!open}
       >
         <nav className={styles.links} aria-label="Menú móvil">
-          {links.map((link, i) => (
+          {menuLinks.map((link, i) => (
             <Link
               key={link.href}
               href={link.href}

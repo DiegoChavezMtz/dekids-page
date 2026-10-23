@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { LandingNavigation } from "../LandingNavigation/LandingNavigation";
 
 const WHATSAPP = "https://wa.me/525573731655";
 const WHATSAPP_MESSAGES = {
@@ -43,8 +44,6 @@ function JourneyIcon({ variant }: { variant: (typeof Journey)[number][1] }) {
 }
 
 export function HomeView() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -58,17 +57,7 @@ export function HomeView() {
 
   return <div className="landing">
     <a className="skip" href="#contenido">Saltar al contenido</a>
-    <header className={`nav-shell${menuOpen ? " is-open" : ""}`}>
-      <a className="brand" href="#inicio" aria-label="Dekids, inicio"><Asset src="logo-dekids.png" alt="" /></a>
-      <nav aria-label="Navegación principal">
-        <a href="#rutas" onClick={() => setMenuOpen(false)}>Para quién</a>
-        <a href="#metodo" onClick={() => setMenuOpen(false)}>Cómo funciona</a>
-        <a href="#testimonios" onClick={() => setMenuOpen(false)}>Testimoniales</a>
-        <details className="audience-switcher"><summary>Otras páginas <span>⌄</span></summary><div><a href="/familias"><strong>Familias</strong><small>Experiencias de 9 a 17 años</small></a><a href="/colegios"><strong>Colegios</strong><small>Proyectos para estudiantes y docentes</small></a><a href="https://empiezadiferente.com/" target="_blank" rel="noopener noreferrer"><strong>Jóvenes y adultos</strong><small>Experiencia RESTART</small></a><a href="#contacto"><strong>Organizaciones</strong><small>Programas para familias y comunidades</small></a></div></details>
-      </nav>
-      <a className="nav-cta" href={WHATSAPP_MESSAGES.general} target="_blank" rel="noopener noreferrer">Conversemos <span>↗</span></a>
-      <button className="menu" type="button" aria-expanded={menuOpen} aria-label="Abrir menú" onClick={() => setMenuOpen((value) => !value)}>Menú</button>
-    </header>
+    <LandingNavigation />
 
     <main id="contenido">
       <section className="hero hero--speaker" id="inicio">

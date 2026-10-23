@@ -13,7 +13,7 @@
 .card {
   display: block;
   padding: var(--space-6) var(--space-8);
-  border-radius: var(--radius-md);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   background: var(--color-bg-card);
   text-decoration: none;
@@ -24,7 +24,7 @@
 }
 
 .card:hover {
-  transform: translateX(4px);
+  transform: translateX(6px);
   border-color: var(--color-border-strong);
 }
 
@@ -42,6 +42,7 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--color-accent);
+  font-family: "Space Mono", var(--font-roboto);
 }
 
 .cardTitle {

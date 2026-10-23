@@ -10,12 +10,13 @@
 }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-16);
 }
 
 .kicker {
   color: var(--color-accent);
+  font-family: "Space Mono", var(--font-roboto);
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
@@ -38,7 +39,7 @@
 
 .card {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   border: 1px solid var(--color-border);
   padding: var(--space-12);
   min-height: 480px;
@@ -59,17 +60,18 @@
 
 .cardMaster {
   background:
-    radial-gradient(120% 100% at 100% 0%, rgba(198, 255, 77, 0.16), transparent 60%),
-    var(--color-bg-card);
+    radial-gradient(90% 100% at 100% 0%, rgba(199, 255, 37, 0.38), transparent 63%),
+    #10266f;
 }
 
 .cardEnterprise {
   background:
-    radial-gradient(120% 100% at 100% 0%, rgba(125, 224, 255, 0.14), transparent 60%),
-    var(--color-bg-card);
+    radial-gradient(100% 100% at 100% 0%, rgba(255, 47, 145, 0.4), transparent 60%),
+    #1737df;
 }
 
 .cardEyebrow {
+  font-family: "Space Mono", var(--font-roboto);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -114,13 +116,14 @@
   content: "";
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: 0;
   background: var(--color-accent);
   flex: none;
   transform: translateY(-2px);
 }
 
 .cardFooter {
+  color: var(--color-accent);
   margin-top: auto;
   display: flex;
   align-items: center;

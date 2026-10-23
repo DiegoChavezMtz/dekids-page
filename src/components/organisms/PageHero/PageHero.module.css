@@ -1,49 +1,62 @@
 .hero {
   position: relative;
-  padding: var(--space-32) var(--space-6) var(--space-16);
-  text-align: center;
+  padding: clamp(8.5rem, 14vw, 12rem) var(--space-6) clamp(4.5rem, 8vw, 7rem);
+  text-align: left;
   overflow: hidden;
   isolation: isolate;
+  background:
+    radial-gradient(circle at 82% 24%, rgba(199, 255, 37, 0.22), transparent 16%),
+    linear-gradient(90deg, #07153e 0 68%, #1737df 68% 100%);
 }
 
 .glow {
   position: absolute;
-  inset: -20% -10% auto -10%;
-  height: 70%;
-  background: radial-gradient(45% 65% at 50% 10%, var(--glow-color, rgba(198, 255, 77, 0.16)), transparent 70%);
-  filter: blur(40px);
+  inset: auto -8vw -15vw auto;
+  width: min(42vw, 620px);
+  height: min(42vw, 620px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 0 54px rgba(199, 255, 37, 0.2), 0 0 0 108px rgba(255, 47, 145, 0.08);
+  background: var(--glow-color, rgba(255, 255, 255, 0.08));
   z-index: -1;
 }
 
 .eyebrow {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-family: "Space Mono", var(--font-roboto);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--color-accent);
   margin: 0 0 var(--space-6);
   text-transform: uppercase;
 }
 
 .title {
-  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  max-width: 18ch;
-  margin: 0 auto var(--space-6);
+  font-size: clamp(3.2rem, 7vw, 7rem);
+  line-height: 0.91;
+  letter-spacing: -0.065em;
+  font-weight: 800;
+  max-width: 12ch;
+  margin: 0 0 var(--space-6);
 }
 
 .sub {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   line-height: 1.55;
-  color: var(--color-fg-muted);
-  max-width: 52ch;
-  margin: 0 auto var(--space-10);
+  color: #d7def5;
+  max-width: 58ch;
+  margin: 0 0 var(--space-10);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 700px) {
+  .hero { background: #07153e; }
+  .title { font-size: clamp(2.8rem, 14vw, 4.3rem); }
+  .glow { width: 52vw; height: 52vw; }
 }
