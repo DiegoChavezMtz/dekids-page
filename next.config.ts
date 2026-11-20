@@ -82,6 +82,7 @@ const legacyRedirects: Redirect[] = [
 ];
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["10.10.10.187"],
   // WordPress servía todas las URLs con barra final; se conservan idénticas.
   trailingSlash: true,
   async redirects() {

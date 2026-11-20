@@ -5,6 +5,7 @@ import { AntiGravityInteractions } from "./AntiGravityInteractions";
 type LandingParts = {
   header: string;
   hero: string;
+  announcement: string;
   experience: string;
   ideas: string;
   details: string;
@@ -24,6 +25,17 @@ function HeroSection({ html }: { html: string }) {
 
 function ExperienceSection({ html }: { html: string }) {
   return <LandingSection html={html} />;
+}
+
+function AntigravityAnnouncementSection({ html }: { html: string }) {
+  // El script del anuncio puede actualizar este HTML antes de que React lo hidrate.
+  return (
+    <div
+      style={{ display: "contents" }}
+      suppressHydrationWarning
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 }
 
 function IdeasSection({ html }: { html: string }) {
@@ -64,6 +76,7 @@ async function getTemplate(): Promise<LandingParts> {
   return {
     header: normalizedBody.slice(0, mainStart),
     hero: sections[0] ?? "",
+    announcement: "",
     experience: sections[1] ?? "",
     ideas: sections[2] ?? "",
     details: sections[3] ?? "",
@@ -75,15 +88,25 @@ async function getTemplate(): Promise<LandingParts> {
 }
 
 async function getStyles() {
-  const stylesheetPath = path.join(
+  const stylesDirectory = path.join(process.cwd(), "src/features/antigravedad/components");
+  const [pageStyles, announcementStyles] = await Promise.all([
+    readFile(path.join(stylesDirectory, "AntiGravityView/antigravedad.css"), "utf8"),
+    readFile(path.join(stylesDirectory, "AntiGravityAnnouncement/announcement.css"), "utf8"),
+  ]);
+  return `${pageStyles}\n${announcementStyles}`;
+}
+
+async function getAnnouncement() {
+  const templatePath = path.join(
     process.cwd(),
-    "src/features/antigravedad/components/AntiGravityView/antigravedad.css",
+    "src/features/antigravedad/components/AntiGravityAnnouncement/template.html",
   );
-  return readFile(stylesheetPath, "utf8");
+  const template = await readFile(templatePath, "utf8");
+  return template.replaceAll("assets/", "/antigravedad/");
 }
 
 export async function AntiGravityView() {
-  const [parts, styles] = await Promise.all([getTemplate(), getStyles()]);
+  const [parts, styles, announcement] = await Promise.all([getTemplate(), getStyles(), getAnnouncement()]);
 
   return (
     <>
@@ -91,6 +114,7 @@ export async function AntiGravityView() {
         <LandingSection html={parts.header} />
         <main>
           <HeroSection html={parts.hero} />
+          <AntigravityAnnouncementSection html={announcement} />
           <ExperienceSection html={parts.experience} />
           <IdeasSection html={parts.ideas} />
           <EventDetailsSection html={parts.details} />
@@ -101,6 +125,7 @@ export async function AntiGravityView() {
         <LandingSection html={parts.footer} />
       </div>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
+      <script src="/antigravedad/announcement.js" async />
       <AntiGravityInteractions />
     </>
   );
