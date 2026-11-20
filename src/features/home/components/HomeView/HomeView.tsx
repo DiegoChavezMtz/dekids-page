@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { LandingNavigation } from "../LandingNavigation/LandingNavigation";
 
 const WHATSAPP = "https://wa.me/525573731655";
@@ -43,7 +43,7 @@ function JourneyIcon({ variant }: { variant: (typeof Journey)[number][1] }) {
   return <svg viewBox="0 0 180 130"><path className="journey-frame" d="M34 25h92a12 12 0 0 1 12 12v52a12 12 0 0 1-12 12H82l-25 17v-17H34a12 12 0 0 1-12-12V37a12 12 0 0 1 12-12Z" /><path className="journey-route" d="M38 67h18l9-20 15 39 12-29 10 20 9-10h12" /><path className="journey-signal" d="M146 42c8 8 8 34 0 42M155 33c13 14 13 47 0 61" /><circle className="journey-node journey-node--a" cx="138" cy="25" r="6" /></svg>;
 }
 
-export function HomeView() {
+export function HomeView({ announcement }: { announcement: ReactNode }) {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -64,6 +64,8 @@ export function HomeView() {
         <div className="hero-copy reveal"><h1>Descubre de lo que es capaz<br /><em>y dale confianza que le abrirá más oportunidades.</em></h1><div className="hero-actions hero-actions--routes"><a className="hero-route hero-route--family" href={WHATSAPP_MESSAGES.family} target="_blank" rel="noopener noreferrer"><small>PARA FAMILIAS</small><strong>Quiero esto para mi hija o hijo</strong><span>↗</span></a><a className="hero-route hero-route--business" href={WHATSAPP_MESSAGES.organization} target="_blank" rel="noopener noreferrer"><small>PARA ORGANIZACIONES</small><strong>Quiero explorar esto para mi equipo</strong><span>↗</span></a></div></div>
         <div className="hero-collage reveal" aria-label="Dos dekidsers ficticios y la mascota de Dekids representan distintas etapas de aprendizaje"><div className="hero-system"><Asset src="dekids-hero-fictitious-dekidser-brand-exact-v3.png" alt="Dos dekidsers ficticios y la mascota azul de Dekids en un escenario de luces neón" className="hero-portrait" priority original /><div className="hero-portrait-shade" aria-hidden="true" /><aside className="speaker-proof" aria-label="Habilidades que destacan en la era de la inteligencia artificial"><strong>Habilidades que destacan en la era de la IA</strong></aside></div></div>
       </section>
+
+      {announcement}
 
       <section className="routes" id="rutas" aria-labelledby="routes-title"><header className="routes-head reveal"><p className="eyebrow"><span />Elige tu punto de partida</p><h2 id="routes-title">¿Qué quieres hacer <em>posible?</em></h2><p>No todas las personas llegan con la misma necesidad. Elige la ruta que más se parece a la tuya y descubre qué podemos construir juntos.</p></header><div className="route-grid"><a className="route-card route-card--school reveal" href={WHATSAPP_MESSAGES.school} target="_blank" rel="noopener noreferrer"><span className="route-index">01 · PARA COLEGIOS</span><h3>Que cada estudiante descubra de qué es capaz.</h3><p>Experiencias con estudiantes y acompañamiento para que el equipo docente pueda continuar.</p><strong>Explorar la ruta <i>↘</i></strong></a><a className="route-card route-card--family reveal" href={WHATSAPP_MESSAGES.family} target="_blank" rel="noopener noreferrer"><span className="route-index">02 · PARA FAMILIAS</span><h3>Que una idea propia encuentre dónde crecer.</h3><p>Espacios para investigar intereses, tomar decisiones y presentar un proyecto propio.</p><strong>Explorar la ruta <i>↘</i></strong></a><a className="route-card route-card--restart reveal" href="https://empiezadiferente.com/" target="_blank" rel="noopener noreferrer"><span className="route-index">03 · JÓVENES Y ADULTOS</span><h3>Que volver a empezar tenga un siguiente paso.</h3><p>RESTART ayuda a convertir lo que sabes hacer en algo concreto para avanzar con más dirección.</p><strong>Conocer RESTART <i>↘</i></strong></a><a className="route-card route-card--company reveal" href={WHATSAPP_MESSAGES.organization} target="_blank" rel="noopener noreferrer"><span className="route-index">04 · EMPRESAS Y FUNDACIONES</span><h3>Elige a quién quieres beneficiar. Nosotros hacemos que suceda.</h3><p>Programas para hijas e hijos de colaboradores o para niñas, niños y adolescentes de una fundación aliada.</p><strong>Platicar con Dekids <i>↘</i></strong></a></div></section>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomeView } from "@/features/home";
+import { AntigravityAnnouncement, HomeView } from "@/features/home";
 
 const OG_TITLE = "Descubre de lo que es capaz";
 const OG_DESCRIPTION =
@@ -25,5 +25,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <HomeView />;
+  return <HomeView announcement={<AntigravityAnnouncement />} />;
 }

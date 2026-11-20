@@ -125,7 +125,7 @@
   let currentSection = null;
   let dispose = null;
   function syncAnnouncement() {
-    const section = document.querySelector(".antiGravity [data-dekids-antigravity]");
+    const section = document.querySelector(".landing [data-dekids-antigravity]");
     if (section === currentSection) return;
     dispose?.();
     currentSection = section;
