@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "@/styles/globals.css";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
 import { SiteFooter } from "@/components/organisms/SiteFooter";
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         {children}
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
