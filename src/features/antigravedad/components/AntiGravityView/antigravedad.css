@@ -238,6 +238,8 @@ body.video-open { overflow:hidden; }
 .price-card p { margin:0; font-size:clamp(.9rem,1.25vw,1.05rem); opacity:.92; }
 .price-date { display:flex; align-items:center; gap:12px; font-weight:700; }
 .price-date svg { width:26px; flex:0 0 26px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.price-cta { min-height:44px; margin-top:22px; padding:0 18px; border-radius:999px; display:flex; align-items:center; justify-content:space-between; background:#220041; color:white; font-size:13px; font-weight:800; transition:transform .2s,box-shadow .2s; }
+.price-cta:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(34,0,65,.28); }
 .regular-price { position:relative; z-index:3; margin:44px 0 0; display:flex; justify-content:center; align-items:center; gap:13px; font-size:clamp(1rem,1.5vw,1.25rem); color:#eee7f7; }
 .regular-price > span { width:30px; height:30px; border:2px solid currentColor; border-radius:50%; display:inline-grid; place-items:center; font:700 17px "Space Grotesk"; }
 .regular-price strong { font-size:1.2em; }
